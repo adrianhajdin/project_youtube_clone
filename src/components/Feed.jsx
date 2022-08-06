@@ -50,21 +50,22 @@ const Feed = () => {
       </Box>
 
       <Box
+        p={2}
         sx={{
           overflowY: "auto",
-          height: "92vh",
+          height: "88vh",
           flex: 2,
         }}
       >
         <Typography
           fontSize={25}
           fontWeight={900}
-          textAlign="center"
-          pt={1}
-          pb={2}
+          textAlign="left"
+          mb={2}
           sx={{ textTransform: "capitalize", color: "white" }}
         >
-          {selectedCategory || "Recommended"} Videos
+          {selectedCategory || "Recommended"}{" "}
+          <span style={{ color: "#FC1503" }}>Videos</span>
         </Typography>
         {/* <Stack direction='row' gap='20px' sx={{ width: '80%', margin: 'auto' }}>
           <Link to='/video/jfKfPfyJRdk' style={{width:'100%'}}>
