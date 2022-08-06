@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { Box, Stack, Typography } from '@mui/material';
+import React, { useEffect, useState } from "react";
+import { Box, Stack, Typography } from "@mui/material";
 
-import { Videos, Categories } from './';
-import { axiosGetReq } from '../utils';
+import { Videos, Categories } from "./";
+import { axiosGetReq } from "../utils";
 
 const Feed = () => {
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const [videos, setVideos] = useState(null);
 
   useEffect(() => {
@@ -21,21 +21,28 @@ const Feed = () => {
   }, [selectedCategory]);
 
   return (
-    <Stack sx={{ flexDirection: { sx: 'column', md: 'row' } }}>
-      <Box sx={{ position: 'relative' }}>
+    <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
+      <Box
+        sx={{
+          position: "relative",
+          justifyContent: "space-between",
+          alignItems: "center",
+          height: { sx: "auto", md: "92vh" },
+          borderRight: "1px solid #3d3d3d",
+          px: { sx: 0, md: 2 },
+        }}
+      >
         <Categories
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
         />
         <p
-          className='copyright'
+          className="copyright"
           style={{
-            position: 'absolute',
-            bottom: '15px',
-            color: '#fff',
-            fontSize: '15px',
-            left: '30px',
-            opacity: '0.8',
+            color: "#fff",
+            fontSize: "15px",
+            backgroundColor: "black",
+            textAlign: "center",
           }}
         >
           Copyright © 2022 YT, Inc.
@@ -44,20 +51,20 @@ const Feed = () => {
 
       <Box
         sx={{
-          overflow: 'auto',
-          height: '90vh',
+          overflowY: "auto",
+          height: "92vh",
           flex: 2,
         }}
       >
         <Typography
           fontSize={25}
           fontWeight={900}
-          textAlign='center'
+          textAlign="center"
           pt={1}
           pb={2}
-          sx={{ textTransform: 'capitalize', color: 'white' }}
+          sx={{ textTransform: "capitalize", color: "white" }}
         >
-          {selectedCategory || 'Recommended'} Videos
+          {selectedCategory || "Recommended"} Videos
         </Typography>
         {/* <Stack direction='row' gap='20px' sx={{ width: '80%', margin: 'auto' }}>
           <Link to='/video/jfKfPfyJRdk' style={{width:'100%'}}>

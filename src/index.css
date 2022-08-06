@@ -29,9 +29,11 @@ a {
   background-color: #FC1503 !important;
   color: white !important;
 }
+
 .category-btn:hover span{
   color: white !important;
 }
+
 .react-player {
   height: 77vh !important;
   width: 100% !important;
@@ -42,30 +44,36 @@ a {
   outline:none;
   width:350px;
 }
+
 .category-btn{
-  height: 40px;
-  border-radius: 20px;
-  font-weight: 600;
+  font-weight: bold !important;
   text-transform: capitalize;
-  gap: 6px;
-  width: 120px;
   display: flex;
   align-items: center;
   justify-content: start;
   cursor:pointer;
-  padding-left: 16px;
-  padding-top:4px;
-  padding-bottom:4px;
+  background: transparent;
+  outline: none;
+  border: none;
+
+  padding: 7px 15px;
+  margin: 10px 0px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
 }
-@media screen and (max-width:800px){
-    .category-btn{
-    height:35px !important;
-    padding:10px 10px 10px 10px;
+
+@media screen and (max-width: 900px) {
+  .category-btn{
+    margin: 10px;
   }
-.copyright{
-  display:none !important;
 }
+
+@media screen and (max-width:800px){
+  .copyright{
+    display:none !important;
+  }
 }
+
 @media screen and (max-width: 600px) {
   .scroll-horizontal {
     overflow: auto !important;
@@ -77,6 +85,4 @@ a {
   .search-bar{
     width:200px;
   }
-
-
 }

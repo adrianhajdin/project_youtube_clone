@@ -1,44 +1,39 @@
-import React from 'react';
-import { Box, Button, Stack, Typography } from '@mui/material';
+import React from "react";
+import { Stack } from "@mui/material";
 
-import { categories } from '../utils/categories';
+import { categories } from "../utils/categories";
 
 const Categories = ({ selectedCategory, setSelectedCategory }) => {
   return (
     <Stack
-      direction='row'
-      gap={5}
+      direction="row"
       sx={{
-        overflow: 'auto',
-        width: { md: '220px' },
-        height: { md: '77vh' },
-        borderRight: '1px solid #3d3d3d',
-        ml: 4,
-        flexDirection: { md: 'column' },
-        padding: '30px 16px',
+        overflowY: "auto",
+        height: { sx: "auto", md: "95%" },
+        flexDirection: { md: "column" },
       }}
     >
       {categories.map((category) => (
         <button
-          className='category-btn'
+          className="category-btn"
           onClick={() => setSelectedCategory(category.name)}
           style={{
-            background:
-              category.name === selectedCategory ? '#FC1503' : 'black',
-            color: category.name === selectedCategory ? 'white' : 'white',
+            background: category.name === selectedCategory && "#FC1503",
+            color: "white",
           }}
           key={category.name}
         >
           <span
             style={{
-              color: category.name === selectedCategory ? 'white' : 'red',
+              color: category.name === selectedCategory ? "white" : "red",
+              marginRight: "15px",
             }}
           >
             {category.icon}
           </span>
           <span
             style={{
-              opacity: category.name === selectedCategory ? '1' : '0.8',
+              opacity: category.name === selectedCategory ? "1" : "0.8",
             }}
           >
             {category.name}
