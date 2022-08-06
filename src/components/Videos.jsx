@@ -27,7 +27,7 @@ const Videos = ({ videos, direction }) => (
           {item.id.videoId && (
             <Card
               sx={{
-                width: { md: "320px", xs: "350px" },
+                width: { md: "320px", xs: "100%" },
                 boxShadow: "none",
                 borderRadius: 0,
               }}
