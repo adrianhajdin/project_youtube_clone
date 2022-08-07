@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 export const BASE_URL = 'https://youtube-v31.p.rapidapi.com';
-export const options = {
+
+const options = {
   params: {
     maxResults: 50,
   },
@@ -11,7 +12,8 @@ export const options = {
   },
 };
 
-export const axiosGetReq = async (url) => {
-  const res = await axios.get(`${BASE_URL}/${url}`, options);
-  return res.data;
+export const fetchFromAPI = async (url) => {
+  const { data } = await axios.get(`${BASE_URL}/${url}`, options);
+
+  return data;
 };
