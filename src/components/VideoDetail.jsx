@@ -13,15 +13,11 @@ const VideoDetail = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    const fetchResults = async () => {
-      const data = await fetchFromAPI(`videos?part=snippet,statistics&id=${id}`);
-      setVideoDetail(data.items[0]);
+    fetchFromAPI(`videos?part=snippet,statistics&id=${id}`)
+      .then((data) => setVideoDetail(data.items[0]))
 
-      const videosData = await fetchFromAPI(`search?part=snippet&relatedToVideoId=${id}&type=video`);
-      setVideos(videosData.items);
-    };
-
-    fetchResults();
+    fetchFromAPI(`search?part=snippet&relatedToVideoId=${id}&type=video`)
+      .then((data) => setVideos(data.items))
   }, [id]);
 
   if(!videoDetail?.snippet) return <Loader />;
