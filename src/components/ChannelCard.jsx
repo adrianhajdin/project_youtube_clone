@@ -1,3 +1,4 @@
+/* eslint-disable radix */
 import React from 'react';
 import { Box, CardContent, CardMedia, Typography } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
@@ -31,7 +32,8 @@ const ChannelCard = ({ channelDetail, marginTop }) => (
         </Typography>
         {channelDetail?.statistics?.subscriberCount && (
           <Typography sx={{ fontSize: '15px', fontWeight: 500, color: 'gray' }}>
-            {parseInt(channelDetail?.statistics?.subscriberCount).toLocaleString('en-US')} Subscribers
+            {parseInt(channelDetail?.statistics?.subscriberCount).toLocaleString('en-US')}{' '}
+            Subscribers
           </Typography>
         )}
       </CardContent>
