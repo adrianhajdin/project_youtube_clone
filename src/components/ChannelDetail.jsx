@@ -17,7 +17,7 @@ const ChannelDetail = () => {
 
       setChannelDetail(data?.items[0]);
 
-      const videosData = await fetchFromAPI(`search?channelId=${id}&part=snippet%2Cid&order=date`);
+      const videosData = await fetchFromAPI(`search?channelId=${id}&part=snippet`,true);
 
       setVideos(videosData?.items);
     };
